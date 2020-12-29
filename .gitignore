@@ -1,5 +1,2 @@
-./client/node_modules
-./client/.*
-
-./server/node_modules
-./server/node_modules
+**/node_modules
+**/.*
