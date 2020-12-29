@@ -33,6 +33,7 @@
     },
     "scripts": {
         "dev": "nodemon --watch src/**/*.ts --exec ts-node src/index.ts",
-        "format": "prettier --write src/**/*.{ts,tsx,scss,css,json}"
+        "format": "prettier --write src/**/*.{ts,tsx,scss,css,json}",
+        "build" : "tsc"
     }
 }
