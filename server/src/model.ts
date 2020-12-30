@@ -4,7 +4,9 @@ const imageSchema = new Schema({
     img: {
         data: Buffer,
         contentType: String,
+        features: JSON
     },
+
 });
 
 const userSchema = new Schema({

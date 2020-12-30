@@ -60,7 +60,7 @@ export const ImageFromCPU = () => {
             >
                 <div>
                     <form
-                        action="http://localhost:8080/photo"
+                        action="http://localhost:8080/photoLookup"
                         method="POST"
                         encType="multipart/form-data"
                     >

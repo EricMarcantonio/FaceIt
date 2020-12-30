@@ -11,3 +11,10 @@ export const GetAllImages = (req: Request, res: Response) => {
         }
     })
 };
+
+
+export const LocallyGetImages = async () => {
+    return Image.find({}, (err, items) => {
+        return items;
+    });
+}
