@@ -7,10 +7,7 @@ import { container } from "../GlobalStateContainer";
 import enTranslations from "@shopify/polaris/locales/en.json";
 import { AppProvider } from "@shopify/polaris";
 
-import {IndexView} from "../views/IndexView";
-
-
-
+import { IndexView } from "../views/IndexView";
 
 export default () => {
     return (
@@ -23,5 +20,3 @@ export default () => {
         </container.Provider>
     );
 };
-
-

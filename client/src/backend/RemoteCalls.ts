@@ -8,5 +8,5 @@ export const AddUser = () => {
 };
 
 export const GetAllImages = async () => {
-    return axios.get("http://localhost:8080/photo")
+    return axios.get("http://localhost:8080/photo");
 };

@@ -5,7 +5,7 @@ import Logo from "../images/logo.png";
 export const LeftPanel = () => {
     return (
         <div className="pl-5 pt-5">
-            <div >
+            <div>
                 <img
                     src={Logo}
                     alt="Logo"
@@ -15,9 +15,7 @@ export const LeftPanel = () => {
                     height="100"
                 />
             </div>
-            <div className="shadow-lg m-4 rounded-lg">
-                Hello Mother fucker
-            </div>
+            <div className="shadow-lg m-4 rounded-lg">Hello Mother fucker</div>
         </div>
     );
 };

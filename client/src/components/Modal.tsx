@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { useState, useCallback } from "react";
 import { Button, Modal, TextField } from "@shopify/polaris";
 import { WebcamCapture } from "./WebCam";
@@ -10,9 +11,6 @@ export const WebCamModal = () => {
         con.setWebcamOpen(!con.openWebcam);
         con.setImage(null);
     }, [con.openWebcam, con.image]);
-
-    const form = new FormData();
-    form.append;
 
     return (
         <div style={{ height: "500px", position: "absolute" }}>
@@ -36,67 +34,57 @@ export const WebCamModal = () => {
     );
 };
 
+const parseFiles = () => {
+    const fr = new FileReader();
+    const im = document.getElementById("image");
+
+    if (!im || !im.files || !im.files[0]) {
+        return "Error";
+    }
+
+    for (let index = 0; index < im.files.length; index++) {
+        //maybe need to be in a unsubmittable form
+        fr.onload = () => {
+            console.log(fr.result);
+        };
+        fr.readAsDataURL(im.files[index]);
+    }
+};
+
 export const ImageFromCPU = () => {
     const con = container.useContainer();
-    const handleChange1 = useCallback(() => {
-        con.setOpenAddImage(!con.openAddImage);
-    }, [con.openAddImage]);
 
-    const [wtf, setWtf] = useState(null);
+    const [src, setSrc] = useState(null);
 
     return (
         <div style={{ height: "500px", position: "absolute" }}>
             <Modal
                 activator={null}
                 open={con.openAddImage}
-                onClose={handleChange1}
+                onClose={() => con.setOpenAddImage(!con.openAddImage)}
                 title="Adding from your computer? Super easy!"
                 secondaryActions={[
                     {
                         content: "Cancel",
-                        onAction: handleChange1,
+                        onAction: () => con.setOpenAddImage(!con.openAddImage),
                     },
                 ]}
             >
-                <div>
-                    <form
-                        action="http://localhost:8080/photoLookup"
-                        method="POST"
-                        encType="multipart/form-data"
-                    >
-                        <div>
-                            <label htmlFor="name">Image Title</label>
-                            <TextField
-                                label="Name"
-                                value={con.name}
-                                onChange={e => con.setName(e)}
-                            />
-                            <input
-                                type="text"
-                                id="name"
-                                placeholder="Name"
-                                value={con.name}
-                                name="name"
-                                required
-                                onChange={e => con.setName(e.target.value)}
-                            />
-                        </div>
+                <div className="px-6 space-y-3">
+                    <TextField
+                        value={con.name}
+                        onChange={e => con.setName(e.target.value)}
+                        placeholder={"Example: Eric Marcantonio"}
+                        label="Name"
+                    />
 
-                        <div>
-                            <label htmlFor="image">Upload Image</label>
-                            <input
-                                type="file"
-                                id="image"
-                                name="image"
-                                value={wtf}
-                                required
-                                onChange={e => setWtf(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <button type="submit">Submit</button>
-                        </div>
-                    </form>
+                    <input
+                        type="file"
+                        id="image"
+                        value={src}
+                        onChange={e => setSrc(e.target.value)}
+                        multiple
+                    />
                 </div>
             </Modal>
         </div>

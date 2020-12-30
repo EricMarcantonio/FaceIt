@@ -1,9 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default () => {
-    return (
-        <div>
-            Not Found
-        </div>
-    )
-}
+    return <div>Not Found</div>;
+};

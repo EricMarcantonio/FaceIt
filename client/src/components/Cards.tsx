@@ -11,7 +11,6 @@ import { container } from "../GlobalStateContainer";
 import { ImageFromCPU, WebCamModal } from "./Modal";
 export const Cards = () => {
     const con = container.useContainer();
-    console.log(con);
     return (
         <>
             <WebCamModal />

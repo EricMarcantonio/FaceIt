@@ -1,11 +1,11 @@
-import { createContainer } from 'unstated-next';
-import { useState } from 'react';
+import { createContainer } from "unstated-next";
+import { useState } from "react";
 
 export const container = createContainer(() => {
     let [image, setImage] = useState(null);
-    let [openWebcam, setWebcamOpen] = useState(false)
+    let [openWebcam, setWebcamOpen] = useState(false);
     let [openAddImage, setOpenAddImage] = useState(false);
-    let [name, setName] = useState(String)
+    let [name, setName] = useState(String);
     return {
         image,
         setImage,
@@ -14,6 +14,6 @@ export const container = createContainer(() => {
         openWebcam,
         setWebcamOpen,
         name,
-        setName
+        setName,
     };
 });
