@@ -1,5 +1,5 @@
-import React from "react";
-import { Avatar, DisplayText, Heading } from "@shopify/polaris";
+import React from 'react';
+import { Avatar, DisplayText, Heading } from '@shopify/polaris';
 
 export const Header = () => {
     return (

@@ -10,10 +10,10 @@ module.exports = {
             options: { tailwind: true },
         },
         {
-            resolve: "gatsby-plugin-postcss",
+            resolve: 'gatsby-plugin-postcss',
             options: {
                 postCssPlugins: [
-                    require("tailwindcss")("./tailwind.config.js"),
+                    require('tailwindcss')('./tailwind.config.js'),
                 ],
             },
         },

@@ -1,28 +1,22 @@
 import mongoose from 'mongoose';
 import express from 'express';
-import bodyParser from 'body-parser';
 import cors from 'cors';
 import * as faceapi from 'face-api.js';
-
-import { upload } from './file';
-
-//Routes
-import { AddUser, UserLookUp } from './routes/AddUserFromFileUpload';
-import { GetAllImages } from './routes/GetAllImages';
+import "@tensorflow/tfjs-node"
+//Routers
+import { statsRouter, photoRouter } from './routes';
 
 const app = express(); //global express app
 
+
+
 //although insecure, this is all local, so cors doesn't matter as much
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+app.use(express.json({ limit: '50mb' }));
 app.use(cors());
 
-//routes
-app.post('/photo', upload.single('image'), AddUser);
-app.post('/photoLookup', upload.single('image'), UserLookUp)
-app.get('/photo', GetAllImages);
-
-let db: mongoose.Collection;
+app.use('/photo', photoRouter);
+app.use('/stats', statsRouter);
 
 (async function () {
     const MODEL_URL = 'src/assets/weights';
@@ -35,13 +29,10 @@ mongoose
     .connect('mongodb://localhost:27017/photos', {
         useUnifiedTopology: true,
         useNewUrlParser: true,
-        useFindAndModify: true,
+        useFindAndModify: false,
     })
     .then(() => {
-        db = mongoose.connection.collection('users');
         app.listen(8080, () => {
             console.log('Accepting requests on port 8080');
         });
     });
-
-export { db };

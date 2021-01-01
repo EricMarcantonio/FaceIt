@@ -1,6 +1,6 @@
-import { TextStyle } from "@shopify/polaris";
-import React, { useEffect, useState } from "react";
-import { GetAllImages } from "../backend/RemoteCalls";
+import { TextStyle } from '@shopify/polaris';
+import React, { useEffect, useState } from 'react';
+import { GetAllImages } from '../backend/RemoteCalls';
 
 const EachImage = ({ element }) => {
     return (
@@ -8,13 +8,15 @@ const EachImage = ({ element }) => {
             <img
                 src={`data:${element.img.contentType};base64,${Buffer.from(
                     element.img.data.data
-                ).toString("base64")}`}
+                ).toString('base64')}`}
                 style={{
-                    maxWidth: "200px",
+                    maxWidth: '200px',
                 }}
             />
             <div>
-                <TextStyle variation="code">{element.img.features.label}</TextStyle>
+                <TextStyle variation="code">
+                    {element.img.features.label}
+                </TextStyle>
             </div>
         </div>
     );
@@ -35,7 +37,9 @@ export const AllImages = () => {
             <div className="grid grid-cols-4 grid-rows-4 gap-5 p-5 mr-8">
                 {photos &&
                     photos.map(element => {
-                        return <EachImage element={element} />;
+                        return (
+                            <EachImage element={element} key={element._id} />
+                        );
                     })}
             </div>
         </>

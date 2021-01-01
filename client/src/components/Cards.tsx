@@ -1,20 +1,25 @@
-import React from "react";
+import React from 'react';
 import {
     Button,
     Card,
     DisplayText,
     Heading,
     TextContainer,
-} from "@shopify/polaris";
+} from '@shopify/polaris';
 
-import { container } from "../GlobalStateContainer";
-import { ImageFromCPU, WebCamModal } from "./Modal";
+import { container } from '../GlobalStateContainer';
+import {
+    AddFromFile,
+    AddFromWebcamModal,
+    LookUpFromWebcamModal,
+} from './modals';
 export const Cards = () => {
     const con = container.useContainer();
     return (
         <>
-            <WebCamModal />
-            <ImageFromCPU />
+            <AddFromFile />
+            <AddFromWebcamModal />
+            <LookUpFromWebcamModal />
             <div className="grid grid-cols-1 grid-rows-1 gap-5 p-5 mr-8">
                 <div>
                     <Card
@@ -29,7 +34,11 @@ export const Cards = () => {
                                         words. Harness that information!
                                     </Heading>
                                     <Button>Search by other photo</Button>
-                                    <Button>
+                                    <Button
+                                        onClick={() =>
+                                            con.setOpenLookupImage(true)
+                                        }
+                                    >
                                         Search by taking a webcam photo
                                     </Button>
                                     <Button>Search by name</Button>
@@ -57,9 +66,9 @@ export const Cards = () => {
                                         Add photo by webcam
                                     </Button>
                                     <Button
-                                        onClick={() =>
-                                            con.setOpenAddImage(true)
-                                        }
+                                        onClick={() => {
+                                            con.setOpenAddImage(true);
+                                        }}
                                     >
                                         Add photo from computer
                                     </Button>

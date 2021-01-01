@@ -17,8 +17,8 @@
         "singleQuote": true
     },
     "dependencies": {
-        "@tensorflow/tfjs": "^2.8.2",
-        "@tensorflow/tfjs-node": "^2.8.2",
+        "@tensorflow/tfjs": "^1.7.2",
+        "@tensorflow/tfjs-node": "^1.7.2",
         "@types/cors": "^2.8.9",
         "@types/express": "^4.17.9",
         "@types/mongodb": "^3.6.3",

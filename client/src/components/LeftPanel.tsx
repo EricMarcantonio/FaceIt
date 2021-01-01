@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 //@ts-ignore
-import Logo from "../images/logo.png";
+import Logo from '../images/logo.png';
 
 export const LeftPanel = () => {
     return (
@@ -10,7 +10,7 @@ export const LeftPanel = () => {
                     src={Logo}
                     alt="Logo"
                     style={{
-                        borderRadius: "10%",
+                        borderRadius: '10%',
                     }}
                     height="100"
                 />

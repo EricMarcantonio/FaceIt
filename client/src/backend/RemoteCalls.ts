@@ -1,12 +1,33 @@
-import axios from "axios";
+import a from 'axios';
 
-export const AddUser = () => {
-    axios.post("http://localhost:8080/user", {
-        name: "Eric",
-        src: "WHoop",
+enum CONFIG {
+    URL = 'http://localhost:8080/',
+    ADD_PHOTO = '/photo/add',
+    LOOKUP_PHOTO = '/photo/lookup',
+    GET_PHOTO = '/photo/',
+    GET_STATS = '/stats',
+}
+const axios = a.create({
+    baseURL: CONFIG.URL,
+});
+
+export const AddPhoto = (data: any, name: String) => {
+    return axios.post(CONFIG.ADD_PHOTO, {
+        picture: data,
+        name: name,
     });
 };
 
-export const GetAllImages = async () => {
-    return axios.get("http://localhost:8080/photo");
+export const GetAllImages = () => {
+    return axios.get(CONFIG.GET_PHOTO);
+};
+
+export const LookUpPhoto = (data: any) => {
+    return axios.post(CONFIG.LOOKUP_PHOTO, {
+        picture: data,
+    });
+};
+
+export const GetStats = () => {
+    return axios.get(CONFIG.GET_STATS);
 };

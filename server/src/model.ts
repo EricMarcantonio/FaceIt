@@ -4,9 +4,8 @@ const imageSchema = new Schema({
     img: {
         data: Buffer,
         contentType: String,
-        features: JSON
+        features: JSON,
     },
-
 });
 
 const userSchema = new Schema({
@@ -15,4 +14,4 @@ const userSchema = new Schema({
 });
 
 export const Image = model('Image', imageSchema);
-export const User = model('User', userSchema)
+export const User = model('User', userSchema);

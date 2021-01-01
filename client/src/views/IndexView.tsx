@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Cards } from "../components/Cards";
-import { Header } from "../components/Header";
-import { LeftPanel } from "../components/LeftPanel";
-import { AllImages } from "../components/AllImages";
+import React, { useState } from 'react';
+import { Cards } from '../components/Cards';
+import { Header } from '../components/Header';
+import { LeftPanel } from '../components/LeftPanel';
+import { AllImages } from '../components/AllImages';
 export const IndexView = () => {
     return (
         <div className=" max-h-screen min-w-full flex">

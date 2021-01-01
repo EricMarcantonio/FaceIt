@@ -1,11 +1,11 @@
-import React from "react";
-import Webcam from "react-webcam";
-import { Button, Heading } from "@shopify/polaris";
+import React from 'react';
+import Webcam from 'react-webcam';
+import { Button, Heading } from '@shopify/polaris';
 
 const videoConstraints = {
     width: 1280,
     height: 720,
-    facingMode: "user",
+    facingMode: 'user',
 };
 
 interface ImageSet {
