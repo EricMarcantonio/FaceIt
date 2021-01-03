@@ -8,10 +8,5 @@ const imageSchema = new Schema({
     },
 });
 
-const userSchema = new Schema({
-    name: String,
-    relatedPictureIDs: [String],
-});
-
 export const Image = model('Image', imageSchema);
-export const User = model('User', userSchema);
+

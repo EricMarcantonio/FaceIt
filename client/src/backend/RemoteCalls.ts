@@ -18,6 +18,8 @@ export const AddPhoto = (data: any, name: String) => {
     });
 };
 
+
+
 export const GetAllImages = () => {
     return axios.get(CONFIG.GET_PHOTO);
 };

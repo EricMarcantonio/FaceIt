@@ -1,6 +1,7 @@
-import { TextStyle } from '@shopify/polaris';
+import { Spinner, TextStyle } from '@shopify/polaris';
 import React, { useEffect, useState } from 'react';
 import { GetAllImages } from '../backend/RemoteCalls';
+import { container } from '../GlobalStateContainer';
 
 const EachImage = ({ element }) => {
     return (
@@ -23,24 +24,29 @@ const EachImage = ({ element }) => {
 };
 
 export const AllImages = () => {
-    const [photos, setPhotos] = useState(null);
-
+    const con = container.useContainer();
     useEffect(() => {
+        con.setLoading(true);
         GetAllImages().then(data => {
-            setPhotos(data.data);
+            con.setLoading(false);
+            con.setPhotos(data.data);
         });
     }, []);
 
     return (
         <>
-            <div></div>
             <div className="grid grid-cols-4 grid-rows-4 gap-5 p-5 mr-8">
-                {photos &&
-                    photos.map(element => {
+                {con.photos ? (
+                    con.photos.map(element => {
                         return (
                             <EachImage element={element} key={element._id} />
                         );
-                    })}
+                    })
+                ) : con.loading ? (
+                    <Spinner size="large" />
+                ) : (
+                    <div> No images found </div>
+                )}
             </div>
         </>
     );

@@ -1,11 +1,12 @@
 import { Request, Response } from 'express';
 import { canvas } from '../env';
 import * as faceapi from 'face-api.js';
-import { Image, User } from '../model';
+import { Image} from '../model';
 import { extractPhoto } from '../util';
 
 
 export const AddPhoto = async (req: Request, res: Response) => {
+    console.log("Processing", req.body.name)
     const start = new Date().getTime()
     let tempImage = await canvas.loadImage(extractPhoto(req));
 
@@ -22,6 +23,7 @@ export const AddPhoto = async (req: Request, res: Response) => {
         ]);
 
         //catch for not being able to find a face
+
 
         let obj = {
             img: {
@@ -40,32 +42,8 @@ export const AddPhoto = async (req: Request, res: Response) => {
                 });
             } else {
                 item.save();
-                tempId = item._id;
-                const query = { name: req.body.name };
-                User.exists(query, (err, doc) => {
-                    if (err) {
-                        res.status(500).json({
-                            status: err,
-                        });
-                    } else {
-                        if (doc) {
-                            //update the array of picture that are in the file
-                            User.findOneAndUpdate(
-                                { name: req.body.name },
-                                { $push: { relatedPictureIDs: tempId } },
-                                //@ts-ignore
-                                (err, suc) => {}
-                            );
-                        } else {
-                            new User({
-                                name: req.body.name,
-                                relatedPictureIDs: [tempId],
-                            }).save();
-                        }
-                        console.log(new Date().getTime() - start)
-                    }
-                });
             }
         });
     }
+    console.log("Finished Processing", req.body.name, "in", ((new Date().getTime() - start) / 1000) + "s")
 };

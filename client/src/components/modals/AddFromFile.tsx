@@ -1,43 +1,49 @@
 //@ts-nocheck
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Button, Modal, TextField } from '@shopify/polaris';
 import { WebcamCapture } from '../WebCam';
 import { container } from '../../GlobalStateContainer';
-import { AddPhoto } from '../../backend/RemoteCalls';
-
-const parseFiles = (name: String) => {
-    const im = document.getElementById('image');
-
-    if (!im || !im.files || !im.files[0]) {
-        return 'Error';
-    }
-
-    for (let index = 0; index < im.files.length; index++) {
-        const fr = new FileReader();
-        fr.readAsDataURL(im.files[index]);
-        fr.onload = () => {
-            AddPhoto(fr.result, name)
-                .then(data => {
-                    console.log(data.data);
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-        };
-    }
-};
+import { GetAllImages } from '../../backend/RemoteCalls';
+import { parseFiles } from './';
 
 export const AddFromFile = () => {
     const con = container.useContainer();
+    const [src, setSrc] = useState('');
+    const handleSubmit = async con => {
+        parseFiles(con.name).then(() => {
+            //cleanup
+            onUnmount();
+        });
+    };
 
-    const [src, setSrc] = useState(null);
+    const onUnmount = () => {
+        setSrc('');
+        con.setOpenAddImage(false);
+        con.setName('');
+        con.setLoading(true);
+        GetAllImages().then(data => {
+            con.setLoading(false);
+            con.setPhotos(data.data);
+        });
+    };
+
+    useEffect(() => {
+        con.setPhotos(null);
+        con.setLoading(true)
+        GetAllImages().then(data => {
+            con.setLoading(false)
+            con.setPhotos(data.data);
+        });
+    }, [con.openAddImage, con.openWebcam]);
 
     return (
         <div style={{ height: '500px', position: 'absolute' }}>
             <Modal
                 activator={null}
                 open={con.openAddImage}
-                onClose={() => con.setOpenAddImage(!con.openAddImage)}
+                onClose={() => {
+                    con.setOpenAddImage(!con.openAddImage);
+                }}
                 title="Adding from your computer? Super easy!"
                 secondaryActions={[
                     {
@@ -61,7 +67,9 @@ export const AddFromFile = () => {
                         onChange={e => setSrc(e.target.value)}
                         multiple
                     />
-                    <Button onClick={() => parseFiles(con.name)}></Button>
+                    <Button onClick={() => handleSubmit(con)}>
+                        Add Pictures
+                    </Button>
                 </div>
             </Modal>
         </div>

@@ -6,7 +6,9 @@ export const container = createContainer(() => {
     let [openWebcam, setWebcamOpen] = useState(false);
     let [openAddImage, setOpenAddImage] = useState(false);
     let [openLookupImage, setOpenLookupImage] = useState(false)
-    let [name, setName] = useState(String);
+    let [name, setName] = useState('');
+    let [loading, setLoading] = useState(false);
+    let [photos, setPhotos] = useState(null)
     return {
         image,
         setImage,
@@ -17,6 +19,10 @@ export const container = createContainer(() => {
         name,
         setName,
         openLookupImage,
-        setOpenLookupImage
+        setOpenLookupImage,
+        loading,
+        setLoading,
+        photos,
+        setPhotos
     };
 });

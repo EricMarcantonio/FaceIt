@@ -12,6 +12,9 @@ export const compareDescriptors = (details: any) => {
             ); //might have to point to other
             let matcher = new faceapi.FaceMatcher(labeledDesc);
             //test against the image
+            if (!details){
+                continue
+            }
             let bestMatch = matcher.findBestMatch(details.descriptor);
             if (bestMatch.distance < 0.55) {
                 return bestMatch.label;

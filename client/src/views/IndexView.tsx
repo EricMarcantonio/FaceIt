@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
-import { Cards } from '../components/Cards';
-import { Header } from '../components/Header';
-import { LeftPanel } from '../components/LeftPanel';
-import { AllImages } from '../components/AllImages';
+import { Cards, Header, AllImages, SearchBar } from '../components';
+import { Page, Frame } from '@shopify/polaris';
+import {container} from '../GlobalStateContainer'
+import { GetAllImages } from '../backend/RemoteCalls';
+
+
+
 export const IndexView = () => {
+    const con = container.useContainer()
+    console.log(con);
     return (
         <div className=" max-h-screen min-w-full flex">
-            <div className="max-h-screen w-96">
-                <LeftPanel />
-            </div>
-            <div className="flex-auto h-full mx-8">
-                <Header />
-                <Cards />
-                <AllImages />
-            </div>
+            <Frame>
+                <Page>
+                    <div className="flex-auto h-full mx-8">
+                        <Header />
+                        <SearchBar/>
+                        <Cards />
+                        <AllImages />
+                    </div>
+                </Page>
+            </Frame>
         </div>
     );
 };
