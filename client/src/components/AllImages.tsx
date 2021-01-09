@@ -2,6 +2,7 @@ import { Spinner, TextStyle } from '@shopify/polaris';
 import React, { useEffect, useState } from 'react';
 import { GetAllImages } from '../backend/RemoteCalls';
 import { container } from '../GlobalStateContainer';
+import { Refresh } from './Refresh';
 
 const EachImage = ({ element }) => {
     return (
@@ -25,16 +26,10 @@ const EachImage = ({ element }) => {
 
 export const AllImages = () => {
     const con = container.useContainer();
-    useEffect(() => {
-        con.setLoading(true);
-        GetAllImages().then(data => {
-            con.setLoading(false);
-            con.setPhotos(data.data);
-        });
-    }, []);
 
     return (
         <>
+        <Refresh/>
             <div className="grid grid-cols-4 grid-rows-4 gap-5 p-5 mr-8">
                 {con.photos ? (
                     con.photos.map(element => {

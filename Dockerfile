@@ -1,4 +1,4 @@
-FROM node
+FROM node:14.4.0
 
 WORKDIR /code
 
@@ -10,17 +10,21 @@ RUN yarn
 
 RUN yarn build
 
-EXPOSE 5000
-
-CMD [ "serve -s", "./build" ]
-
 WORKDIR /code/server
 
 RUN yarn
 
-RUN yarn build
+RUN yarn run build
+
+WORKDIR /code
+
+RUN npm install -g serve
+
+EXPOSE 8000
 
 EXPOSE 8080
 
-CMD [ "node", "/dist/index.js" ]
+RUN serve -l 8000 -s /code/client &
+
+CMD [ "node", "/code/server/dist/index.js" ]
 

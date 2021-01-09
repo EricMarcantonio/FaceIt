@@ -10,31 +10,9 @@ export const AddFromFile = () => {
     const con = container.useContainer();
     const [src, setSrc] = useState('');
     const handleSubmit = async con => {
-        parseFiles(con.name).then(() => {
-            //cleanup
-            onUnmount();
-        });
+        parseFiles(con.name)
     };
 
-    const onUnmount = () => {
-        setSrc('');
-        con.setOpenAddImage(false);
-        con.setName('');
-        con.setLoading(true);
-        GetAllImages().then(data => {
-            con.setLoading(false);
-            con.setPhotos(data.data);
-        });
-    };
-
-    useEffect(() => {
-        con.setPhotos(null);
-        con.setLoading(true)
-        GetAllImages().then(data => {
-            con.setLoading(false)
-            con.setPhotos(data.data);
-        });
-    }, [con.openAddImage, con.openWebcam]);
 
     return (
         <div style={{ height: '500px', position: 'absolute' }}>
