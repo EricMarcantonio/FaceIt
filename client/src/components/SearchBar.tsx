@@ -25,6 +25,7 @@ export const SearchBar = () => {
     useEffect(() => {
         updateText(inputValue);
     }, []);
+    
 
     const updateText = useCallback(
         value => {
