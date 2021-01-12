@@ -1,7 +1,7 @@
 import a from 'axios';
 
 enum CONFIG {
-    URL = 'http://localhost:8080/',
+    URL = 'https://us-central1-face-it-shopify.cloudfunctions.net/api',
     ADD_PHOTO = '/photo/add',
     LOOKUP_PHOTO = '/photo/lookup',
     GET_PHOTO = '/photo/',

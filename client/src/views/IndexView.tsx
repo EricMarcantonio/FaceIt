@@ -6,7 +6,7 @@ import { GetAllImages } from '../backend/RemoteCalls';
 
 export const IndexView = () => {
     const con = container.useContainer();
-    console.log(con);
+    
     useEffect(() => {
         con.setLoading(true);
 
@@ -14,7 +14,7 @@ export const IndexView = () => {
             con.setLoading(false);
             con.setPhotos(data.data);
         });
-    });
+    }, []);
     return (
         <div className=" max-h-screen min-w-full flex">
             <Frame>

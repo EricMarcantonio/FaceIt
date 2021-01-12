@@ -39,7 +39,9 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "firebase:hosting": "yarn build && firebase deploy --only hosting",
+    "firebase:functions": "yarn build && firebase deploy --only functions"
   },
   "repository": {
     "type": "git",

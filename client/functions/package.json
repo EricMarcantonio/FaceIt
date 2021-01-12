@@ -1,0 +1,36 @@
+{
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@tensorflow/tfjs": "^1.7.2",
+    "@tensorflow/tfjs-node": "^1.7.2",
+    "@types/cors": "^2.8.9",
+    "@types/express": "^4.17.9",
+    "@types/mongodb": "^3.6.3",
+    "@types/mongoose": "^5.10.3",
+    "canvas": "^2.6.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "face-api.js": "^0.22.2",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.8",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.6.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}

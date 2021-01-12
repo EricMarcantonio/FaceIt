@@ -24,7 +24,7 @@ export const SearchBar = () => {
 
     useEffect(() => {
         updateText(inputValue);
-    }, [con.photos]);
+    }, []);
 
     const updateText = useCallback(
         value => {
@@ -77,7 +77,6 @@ export const SearchBar = () => {
                 selected={selectedOptions}
                 onSelect={updateSelection}
                 textField={textField}
-                {...console.log(inputValue)}
             />
         </div>
     );
