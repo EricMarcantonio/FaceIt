@@ -1,13 +1,11 @@
 import { Request, Response } from 'express';
-import { canvas } from '../env';
-import * as faceapi from 'face-api.js';
-import { Image} from '../model';
+import { canvas, faceapi } from '../env';
+import { Image } from '../model';
 import { extractPhoto } from '../util';
 
-
 export const AddPhoto = async (req: Request, res: Response) => {
-    console.log("Processing", req.body.name)
-    const start = new Date().getTime()
+    console.log('Processing', req.body.name);
+    const start = new Date().getTime();
     let tempImage = await canvas.loadImage(extractPhoto(req));
 
     let tempImageDesc = await faceapi
@@ -23,7 +21,6 @@ export const AddPhoto = async (req: Request, res: Response) => {
         ]);
 
         //catch for not being able to find a face
-
 
         let obj = {
             img: {
@@ -42,8 +39,14 @@ export const AddPhoto = async (req: Request, res: Response) => {
                 });
             } else {
                 item.save();
+                res.send(200);
             }
         });
     }
-    console.log("Finished Processing", req.body.name, "in", ((new Date().getTime() - start) / 1000) + "s")
+    console.log(
+        'Finished Processing',
+        req.body.name,
+        'in',
+        (new Date().getTime() - start) / 1000 + 's'
+    );
 };

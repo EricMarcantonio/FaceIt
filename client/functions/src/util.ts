@@ -1,6 +1,6 @@
 import { Request } from 'express';
 import { Image } from './model';
-import * as faceapi from 'face-api.js';
+import { faceapi } from './env'
 
 export const compareDescriptors = (details: any) => {
     return LocallyGetImages().then((data) => {

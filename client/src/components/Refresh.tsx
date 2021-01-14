@@ -11,6 +11,9 @@ export const Refresh = () => {
         await GetAllImages().then((data) => {
             con.setLoading(false);
             con.setPhotos(data.data)
+        }).catch((er) => {
+            console.log(er)
+            con.setPhotos(false)
         })
     }
     return (

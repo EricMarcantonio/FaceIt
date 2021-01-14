@@ -6,7 +6,7 @@ import { Refresh } from './Refresh';
 
 const EachImage = ({ element }) => {
     return (
-        <div className="shadow-lg rounded-lg bg-purple-300">
+        <div className=" shadow-lg rounded-lg bg-purple-300">
             <img
                 src={`data:${element.img.contentType};base64,${Buffer.from(
                     element.img.data.data

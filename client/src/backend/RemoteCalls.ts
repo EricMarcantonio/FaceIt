@@ -1,14 +1,16 @@
 import a from 'axios';
 
 enum CONFIG {
-    URL = 'https://us-central1-face-it-shopify.cloudfunctions.net/api',
     ADD_PHOTO = '/photo/add',
     LOOKUP_PHOTO = '/photo/lookup',
     GET_PHOTO = '/photo/',
     GET_STATS = '/stats',
 }
+
+
+
 const axios = a.create({
-    baseURL: CONFIG.URL,
+    baseURL: process.env.NODE_ENV == "production" ? "https://northamerica-northeast1-face-it-v2.cloudfunctions.net/api" : "http://localhost:5001/face-it-v2/us-central1/api",
 });
 
 export const AddPhoto = (data: any, name: String) => {
