@@ -1,7 +1,6 @@
 import { extractPhoto, compareDescriptors } from '../util';
 import { Request, Response } from 'express';
-import { canvas } from '../env';
-import * as faceapi from 'face-api.js';
+import { canvas, faceapi } from '../env';
 
 export const LookUpPhoto = async (req: Request, res: Response) => {
     const tempImage = await canvas.loadImage(extractPhoto(req));
