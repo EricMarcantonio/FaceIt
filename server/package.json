@@ -2,12 +2,14 @@
   "name": "functions",
   "scripts": {
     "build": "tsc",
-    "start": "nodemon --watch src/**/*.ts --exec ts-node src/index.ts"
+    "start": "nodemon --watch src/**/*.ts --exec ts-node src/index.ts",
+    "docker:build": "docker build . -t server",
+    "docker:run": "docker run -p 3000:3000 server"
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@tensorflow/tfjs": "^2.8.4",
-    "@tensorflow/tfjs-node": "^2.8.4",
+    "@tensorflow/tfjs": "1.7.4",
+    "@tensorflow/tfjs-node": "1.7.4",
     "@types/cors": "^2.8.9",
     "@types/express": "^4.17.9",
     "@types/mongodb": "^3.6.3",

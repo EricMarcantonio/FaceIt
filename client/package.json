@@ -40,8 +40,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "firebase:hosting": "yarn build && firebase deploy --only hosting",
-    "firebase:functions": "firebase deploy --only functions"
+    "docker:build": "docker build . -t client",
+    "docker:run": "docker run -p 5000:5000 client"
   },
   "repository": {
     "type": "git",

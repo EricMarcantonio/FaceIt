@@ -20,7 +20,7 @@ app.use(cors());
 
 mongoose
     .connect(
-        'mongodb+srv://admin:z2eSwDgu9oDQKVJy@cluster0.zbto2.mongodb.net/photos?retryWrites=true&w=majority',
+        'mongodb://mongo:27017/photos',
         {
             useUnifiedTopology: true,
             useNewUrlParser: true,

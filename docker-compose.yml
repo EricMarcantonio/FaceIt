@@ -1,0 +1,27 @@
+# docker-compose.yml
+version: "3.4"
+networks:
+  why:
+    driver: bridge
+services:
+  mongo:
+    image: mongo
+    hostname: mongo
+    networks:
+      - why
+    ports:
+      - 2000:27017
+  client:
+    build: ./client
+    hostname: client
+    networks:
+      - why
+    ports:
+      - 5000:5000
+  server:
+    build: ./server
+    hostname: server
+    networks:
+      - why
+    ports:
+      - 3000:3000 #reroute due to being on windows and already running mongodb

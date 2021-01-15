@@ -39,7 +39,7 @@ export const AddPhoto = async (req: Request, res: Response) => {
                 });
             } else {
                 item.save();
-                res.send(200);
+                res.sendStatus(200).end();
             }
         });
     }

@@ -1,5 +1,4 @@
 **/node_modules
 **/.*
 /server/src/assets/images
-
-/client/public
+**/.cache

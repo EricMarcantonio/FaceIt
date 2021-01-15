@@ -8,7 +8,8 @@ export const GetAllImages = (req: Request, res: Response) => {
             console.log(err);
             res.sendStatus(400);
         } else {
-            res.json(items);
+            res.json(items).end();
+            
         }
     });
 };
