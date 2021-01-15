@@ -10,7 +10,6 @@ enum CONFIG {
 
 
 const axios = a.create({
-    // baseURL: process.env.NODE_ENV == "production" ? "http://159.203.1.184/" : "http://localhost:3000/",
     baseURL: "http://localhost:3000/"
 });
 

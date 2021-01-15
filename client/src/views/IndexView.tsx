@@ -21,7 +21,6 @@ export const IndexView = () => {
                 <Page>
                     <div className="flex-auto h-full mx-8">
                         <Header />
-                        <SearchBar />
                         <Cards />
                         <AllImages />
                     </div>

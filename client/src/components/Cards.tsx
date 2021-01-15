@@ -33,7 +33,7 @@ export const Cards = () => {
                                         Some say a picture is worth a thousand
                                         words. Harness that information!
                                     </Heading>
-                                    <Button>Search by other photo</Button>
+                                    <Button disabled>Search by other photo</Button>
                                     <Button
                                         onClick={() =>
                                             con.setOpenLookupImage(true)
@@ -41,7 +41,7 @@ export const Cards = () => {
                                     >
                                         Search by taking a webcam photo
                                     </Button>
-                                    <Button>Search by name</Button>
+                                    <Button disabled >Search by name</Button>
                                 </TextContainer>
                             </div>
                         </div>
