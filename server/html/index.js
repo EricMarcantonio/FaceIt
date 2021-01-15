@@ -51,6 +51,7 @@ app.use(express_1.default.urlencoded({ extended: true, limit: '50mb' }));
 app.use(express_1.default.json({ limit: '50mb' }));
 app.use('/photo', routes_1.photoRouter);
 app.use('/stats', routes_1.statsRouter);
+app.use(cors());
 mongoose_1.default
     .connect('mongodb+srv://admin:z2eSwDgu9oDQKVJy@cluster0.zbto2.mongodb.net/photos?retryWrites=true&w=majority', {
     useUnifiedTopology: true,
@@ -60,7 +61,9 @@ mongoose_1.default
     .catch(function (er) {
     console.log(er);
 })
-    .then(function () { });
+    .then(function () {
+    console.log('Mongoose Connected');
+});
 (function () {
     return __awaiter(this, void 0, void 0, function () {
         var MODEL_URL;
@@ -83,6 +86,6 @@ mongoose_1.default
     });
 })().then(function () {
     app.listen(3000, function () {
-        console.log("Listening on 3000");
+        console.log('Listening on 3000');
     });
 });

@@ -13,8 +13,10 @@ const app = express(); //global express app
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(express.json({ limit: '50mb' }));
 
-app.use('/photo', photoRouter);
-app.use('/stats', statsRouter);
+app.use('/photo', cors({origin: true}), photoRouter);
+app.use('/stats', cors({origin: true}), statsRouter);
+
+app.use(cors());
 
 mongoose
     .connect(
@@ -28,7 +30,9 @@ mongoose
     .catch(er => {
         console.log(er);
     })
-    .then(() => {});
+    .then(() => {
+        console.log('Mongoose Connected');
+    });
 
 (async function () {
     const MODEL_URL = 'src/assets/weights';
@@ -37,6 +41,6 @@ mongoose
     await faceapi.nets.faceRecognitionNet.loadFromDisk(MODEL_URL);
 })().then(() => {
     app.listen(3000, () => {
-        console.log("Listening on 3000")
+        console.log('Listening on 3000');
     });
 });

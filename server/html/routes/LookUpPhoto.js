@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.LookUpPhoto = void 0;
 var util_1 = require("../util");
 var env_1 = require("../env");
 exports.LookUpPhoto = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {

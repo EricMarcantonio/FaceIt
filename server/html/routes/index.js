@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.statsRouter = exports.photoRouter = void 0;
 var AddPhoto_1 = require("./AddPhoto");
 var GetAllImages_1 = require("./GetAllImages");
 var LookUpPhoto_1 = require("./LookUpPhoto");

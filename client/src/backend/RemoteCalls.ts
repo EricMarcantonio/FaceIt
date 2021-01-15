@@ -10,7 +10,7 @@ enum CONFIG {
 
 
 const axios = a.create({
-    baseURL: process.env.NODE_ENV == "production" ? "http://159.203.1.184/" : "http://localhost:5001/face-it-v2/us-central1/api",
+    baseURL: process.env.NODE_ENV == "production" ? "http://159.203.1.184/" : "http://localhost:3000/",
 });
 
 export const AddPhoto = (data: any, name: String) => {

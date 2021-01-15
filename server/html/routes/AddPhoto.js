@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AddPhoto = void 0;
 var env_1 = require("../env");
 var model_1 = require("../model");
 var util_1 = require("../util");
