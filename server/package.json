@@ -8,8 +8,8 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@tensorflow/tfjs": "^1.7.2",
-    "@tensorflow/tfjs-node": "^1.7.2",
+    "@tensorflow/tfjs": "^2.8.4",
+    "@tensorflow/tfjs-node": "^2.8.4",
     "@types/cors": "^2.8.9",
     "@types/express": "^4.17.9",
     "@types/mongodb": "^3.6.3",

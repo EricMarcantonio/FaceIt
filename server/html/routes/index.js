@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var AddPhoto_1 = require("./AddPhoto");
+var GetAllImages_1 = require("./GetAllImages");
+var LookUpPhoto_1 = require("./LookUpPhoto");
+var express_1 = require("express");
+var photoRouter = express_1.Router();
+exports.photoRouter = photoRouter;
+photoRouter.get('/', GetAllImages_1.GetAllImages);
+photoRouter.post('/lookup', LookUpPhoto_1.LookUpPhoto);
+photoRouter.post('/add', AddPhoto_1.AddPhoto);
+var statsRouter = express_1.Router();
+exports.statsRouter = statsRouter;
+statsRouter.get('/');
