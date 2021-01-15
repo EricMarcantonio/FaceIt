@@ -5,6 +5,7 @@ import { Router } from 'express';
 
 const photoRouter = Router();
 
+
 photoRouter.get('/', GetAllImages);
 photoRouter.post('/lookup', LookUpPhoto);
 photoRouter.post('/add', AddPhoto);

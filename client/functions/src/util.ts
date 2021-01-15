@@ -33,6 +33,9 @@ export const extractPhoto = (req: Request) => {
 
 export const LocallyGetImages = async () => {
     return Image.find({}, (err, items) => {
+        if (err){
+            return err;
+        }
         return items;
     });
 };
