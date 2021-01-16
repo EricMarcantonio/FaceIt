@@ -7,10 +7,8 @@ enum CONFIG {
     GET_STATS = '/stats',
 }
 
-
-
 const axios = a.create({
-    baseURL: "http://localhost:3000/"
+    baseURL: 'http://localhost:3000/',
 });
 
 export const AddPhoto = (data: any, name: String) => {
@@ -19,8 +17,6 @@ export const AddPhoto = (data: any, name: String) => {
         name: name,
     });
 };
-
-
 
 export const GetAllImages = () => {
     return axios.get(CONFIG.GET_PHOTO);

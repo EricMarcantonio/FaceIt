@@ -6,7 +6,7 @@ import { GetAllImages } from '../backend/RemoteCalls';
 
 export const IndexView = () => {
     const con = container.useContainer();
-    
+
     useEffect(() => {
         con.setLoading(true);
 

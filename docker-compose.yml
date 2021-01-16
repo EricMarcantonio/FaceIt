@@ -1,7 +1,7 @@
 # docker-compose.yml
 version: "3.4"
 networks:
-  why:
+  net:
     driver: bridge
 services:
   mongo:

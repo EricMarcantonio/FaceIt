@@ -25,7 +25,6 @@ export const SearchBar = () => {
     useEffect(() => {
         updateText(inputValue);
     }, []);
-    
 
     const updateText = useCallback(
         value => {
@@ -55,7 +54,6 @@ export const SearchBar = () => {
 
             setSelectedOptions(selected);
             setInputValue(selectedValue);
-            
         },
         [options]
     );
@@ -71,7 +69,6 @@ export const SearchBar = () => {
     );
 
     return (
-        
         <div>
             <Autocomplete
                 options={options}

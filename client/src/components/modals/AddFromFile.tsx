@@ -1,18 +1,20 @@
 //@ts-nocheck
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Modal, TextField } from '@shopify/polaris';
-import { WebcamCapture } from '../WebCam';
 import { container } from '../../GlobalStateContainer';
-import { GetAllImages } from '../../backend/RemoteCalls';
 import { parseFiles } from './';
 
 export const AddFromFile = () => {
     const con = container.useContainer();
     const [src, setSrc] = useState('');
     const handleSubmit = async con => {
-        parseFiles(con.name)
+        (await parseFiles(con.name)).then(() => {
+            document.getElementById('refresh')?.click();
+        })
+        con.setOpenAddImage(!con.openAddImage);
+        con.setName('');
+        document.getElementById('refresh')?.click();
     };
-
 
     return (
         <div style={{ height: '500px', position: 'absolute' }}>
@@ -21,6 +23,7 @@ export const AddFromFile = () => {
                 open={con.openAddImage}
                 onClose={() => {
                     con.setOpenAddImage(!con.openAddImage);
+                    con.setName('');
                 }}
                 title="Adding from your computer? Super easy!"
                 secondaryActions={[

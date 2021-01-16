@@ -5,10 +5,11 @@ export const container = createContainer(() => {
     let [image, setImage] = useState(null);
     let [openWebcam, setWebcamOpen] = useState(false);
     let [openAddImage, setOpenAddImage] = useState(false);
-    let [openLookupImage, setOpenLookupImage] = useState(false)
+    let [openLookupImage, setOpenLookupImage] = useState(false);
     let [name, setName] = useState('');
     let [loading, setLoading] = useState(false);
-    let [photos, setPhotos] = useState(null)
+    let [photos, setPhotos] = useState(null);
+    let [openLookupFromFile, setOpenLookupFromFile] = useState(false);
     return {
         image,
         setImage,
@@ -23,6 +24,8 @@ export const container = createContainer(() => {
         loading,
         setLoading,
         photos,
-        setPhotos
+        setPhotos,
+        openLookupFromFile,
+        setOpenLookupFromFile
     };
 });

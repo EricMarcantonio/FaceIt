@@ -2,6 +2,7 @@
 import { AddFromFile } from './AddFromFile';
 import { AddFromWebcamModal } from './AddFromWebcam';
 import { LookUpFromWebcamModal } from './LookUpFromWebcam';
+import {LookUpFromFile} from './LookUpFromFile'
 import { AddPhoto } from '../../backend/RemoteCalls';
 const parseFiles = (name: String) => {
     const im = document.getElementById('image');
@@ -22,4 +23,4 @@ const parseFiles = (name: String) => {
     return Promise.all(req);
 };
 
-export { AddFromFile, AddFromWebcamModal, LookUpFromWebcamModal, parseFiles };
+export { AddFromFile, AddFromWebcamModal, LookUpFromWebcamModal, LookUpFromFile, parseFiles };

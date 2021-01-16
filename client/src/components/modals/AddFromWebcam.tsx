@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { useState, useCallback } from 'react';
 import { Button, Modal, TextField } from '@shopify/polaris';
 import { WebcamCapture } from '../WebCam';
@@ -15,7 +16,7 @@ export const AddFromWebcamModal = () => {
                 onClose={() => {
                     con.setWebcamOpen(!con.openWebcam);
                     con.setImage(null);
-                    con.setName("")
+                    con.setName('');
                 }}
                 title="Let's add your beautiful face"
                 secondaryActions={[
@@ -24,7 +25,7 @@ export const AddFromWebcamModal = () => {
                         onAction: () => {
                             con.setWebcamOpen(!con.openWebcam);
                             con.setImage(null);
-                            con.setName("");
+                            con.setName('');
                         },
                     },
                 ]}
@@ -46,7 +47,15 @@ export const AddFromWebcamModal = () => {
                             placeholder={'Example: Eric Marcantonio'}
                             label="Name"
                         />
-                        <Button onClick={() => AddPhoto(con.image, con.name)}>
+                        <Button
+                            onClick={() => {
+                                AddPhoto(con.image, con.name);
+                                con.setWebcamOpen(!con.openWebcam);
+                                con.setImage(null);
+                                con.setName('');
+                                document.getElementById('refresh')?.click();
+                            }}
+                        >
                             I look amazing! (send to DB)
                         </Button>
                     </div>

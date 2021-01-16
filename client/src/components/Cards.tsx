@@ -12,6 +12,7 @@ import {
     AddFromFile,
     AddFromWebcamModal,
     LookUpFromWebcamModal,
+    LookUpFromFile,
 } from './modals';
 export const Cards = () => {
     const con = container.useContainer();
@@ -20,6 +21,7 @@ export const Cards = () => {
             <AddFromFile />
             <AddFromWebcamModal />
             <LookUpFromWebcamModal />
+            <LookUpFromFile />
             <div className="grid grid-cols-1 grid-rows-1 gap-5 p-5 mr-8">
                 <div>
                     <Card
@@ -33,7 +35,13 @@ export const Cards = () => {
                                         Some say a picture is worth a thousand
                                         words. Harness that information!
                                     </Heading>
-                                    <Button disabled>Search by other photo</Button>
+                                    <Button
+                                        onClick={() => {
+                                            con.setOpenLookupFromFile(true);
+                                        }}
+                                    >
+                                        Search by other photo
+                                    </Button>
                                     <Button
                                         onClick={() =>
                                             con.setOpenLookupImage(true)
@@ -41,7 +49,7 @@ export const Cards = () => {
                                     >
                                         Search by taking a webcam photo
                                     </Button>
-                                    <Button disabled >Search by name</Button>
+                                    <Button disabled>Search by name</Button>
                                 </TextContainer>
                             </div>
                         </div>

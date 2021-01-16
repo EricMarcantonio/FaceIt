@@ -1,5 +1,6 @@
-import React, { useState, useCallback } from 'react';
-import { Button, Modal, TextField } from '@shopify/polaris';
+//@ts-nocheck
+import React from 'react';
+import { Button, Modal } from '@shopify/polaris';
 import { WebcamCapture } from '../WebCam';
 import { container } from '../../GlobalStateContainer';
 import { LookUpPhoto } from '../../backend/RemoteCalls';
@@ -16,7 +17,7 @@ export const LookUpFromWebcamModal = () => {
                     con.setOpenLookupImage(!con.openLookupImage);
                     con.setImage(null);
                 }}
-                title="Let's add your beautiful face"
+                title="Who are you?"
                 secondaryActions={[
                     {
                         content: 'Cancel',
@@ -38,9 +39,13 @@ export const LookUpFromWebcamModal = () => {
                     </div>
                     <div className="space-y-3">
                         <img src={con.image} />
-                        <Button onClick={() => LookUpPhoto(con.image).then((res) => {
-                            alert(res.data.user)
-                        })}>
+                        <Button
+                            onClick={() =>
+                                LookUpPhoto(con.image).then(res => {
+                                    alert("Hello " + res.data.user + "!");
+                                })
+                            }
+                        >
                             Who am I? (psst... send to DB to find out!)
                         </Button>
                     </div>

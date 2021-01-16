@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Spinner, TextStyle } from '@shopify/polaris';
 import React, { useEffect, useState } from 'react';
 import { GetAllImages } from '../backend/RemoteCalls';
@@ -29,7 +30,7 @@ export const AllImages = () => {
 
     return (
         <>
-        <Refresh/>
+            <Refresh />
             <div className="grid grid-cols-4 grid-rows-4 gap-5 p-5 mr-8">
                 {con.photos ? (
                     con.photos.map(element => {
