@@ -6,6 +6,7 @@
 **FaceIt** is an image repository powered by Machine Learning, and your 😀!
 
 ## Usage
+
 `$ git clone https://github.com/EricMarcantonio/FaceIt.git`
 `$ cd /FaceIt`
 `$ docker-compose up`
@@ -16,7 +17,7 @@
 
 ## Features
 ### Add
-Adding selfies is a breeze! Just click **Add Photo by Webcam** or **Add Photo from Computer** to add a photo to the repo
+Adding selfies is a breeze! Just click **Add Photo by Webcam** or **Add Photo from Computer** to add a photo to the repo.
 ### Search 
 Need help identifing someone? No problem! Click **Seach by Other Photo** or **Seach by taking a Webcam photo** to ID who is in the picture!
 
@@ -25,7 +26,9 @@ FaceIt is built in mainly `TypeScript`. It is dockerized and is ready for you tr
 
 Here is a diagram about how the program is structured:
 
+It has a `React
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk4ODU2MjE1XX0=
+eyJoaXN0b3J5IjpbMjAwMTQzOTM5Niw4OTg4NTYyMTVdfQ==
 -->
