@@ -14,7 +14,6 @@
  Navigate to `localhost:5000` to see the app!
 
 
-
 ## Features
 ### Add
 Adding selfies is a breeze! Just click **Add Photo by Webcam** or **Add Photo from Computer** to add a photo to the repo.
@@ -28,9 +27,11 @@ Here is a diagram about how the program is structured:
 
 It has a `React` front-end using `polaris` as its component system. On the back-end it is running `NodeJs` and `ExpressJs`. By using the `face-api.js` package, **FaceIt** is able to obtain the descriptors from each face, and save them into a `MongoDB` instance (along with the image of course!).
 
-The entire program is structed around Docker, with 3 components in their seperate containers. The front-end is served from a Docker 
+The entire program is structed around Docker, with 3 components in their seperate containers: front-end, back-end and the database.
+
+
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1MDcwNTAyNCw4OTg4NTYyMTVdfQ==
+eyJoaXN0b3J5IjpbLTYxNTYyMTI1Myw4OTg4NTYyMTVdfQ==
 -->
