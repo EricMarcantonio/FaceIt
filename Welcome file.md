@@ -4,7 +4,7 @@
 ## Query a Repo: with your 😀!
 
 **FaceIt** is an image repository powered by Machine Learning, and your 😀!
-
+![enter image description here](https://lh3.googleusercontent.com/u_V0jUGJ8L5pIKl1db0xiEj0eqCX-9PmOSh04If-PBGmuR0y0j-z56JTmRNM2htCdUPMmBJ1DuzUfJAMv_sj_DDT495MzqoTKtj9w9lLUF87muqjCZoUgyNRsAaPCajiS9wQRNXzbombhaSesIK93qxCrkPQCOdPX66scyvYUuRv-nM-ZPjOGZRrhL98x3_uOM6MF3FigTo2iiMIDmSR7R-XRDacuIlKb1z8NYi6Wn7Lj-CAXYigoegHs1RwoUvEnIAWNprkdg4FRmZ9I_D1UcoXzRiR214Y2jusCiRYtzAcsA5e3ZrBSunniQCnPsGve1blPYxByZW4hroKTpDb7gwcPannsgi7BilU7yJmOuHZBy6wJRy-UskLyYiBiJssAauooBmc4Ypx04wGYie21xkirT0OfGteKRUeAIFc0QkCcF8jnkN1GL0wnzGegYHf2OiZ1WrWPc1I3nqZgUJC_71eSjkEPexTjwtGghwERqfcya7rLR3XHoVUXqTcNTo7iStZowmqx5HfeeRrUlTrbqH-3Ufb37qCXS4ctDxMQE5E6JmpOK9fEfI7zVW2X0nhXMf-yQwJo5I1hxo0fhePfFgF4O5_6FhCbCWPXpRymOMml_vsXdjIlGjGxagoKjd_kZqv4FJmdNHBxXLSiUp2wzzdRedglPUXRlhRZVa1919JdBMR7xNSgdeA1go5DQ=w1783-h849-no?authuser=0)
 
 ## Usage
 
@@ -32,9 +32,9 @@ It has a `React` front-end using `Polaris` as its component system. On the back-
 
 The entire program is structed around Docker, with 3 components in their seperate containers: front-end, back-end and the database.
 
-
+*This project was created and intended for Shopify's Summer Internship Program. No gain of any kind was attributed to the developer by or *
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDAzMjE4NTE5LDIxMzkzMzAzODAsLTE1Mz
-Y4NzY0NTcsMTI2MjU3NDM5MywtMTAxMzAzMjY1LDg5ODg1NjIx
-NV19
+eyJoaXN0b3J5IjpbMTM2NzgzMTg1MywyMTM5MzMwMzgwLC0xNT
+M2ODc2NDU3LDEyNjI1NzQzOTMsLTEwMTMwMzI2NSw4OTg4NTYy
+MTVdfQ==
 -->
