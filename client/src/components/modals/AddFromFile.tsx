@@ -8,11 +8,12 @@ export const AddFromFile = () => {
     const con = container.useContainer();
     const [src, setSrc] = useState('');
     const handleSubmit = async con => {
+        con.setOpenAddImage(!con.openAddImage);
         (await parseFiles(con.name)).then(() => {
             document.getElementById('refresh')?.click();
-        })
-        con.setOpenAddImage(!con.openAddImage);
+        });
         con.setName('');
+        setSrc('');
         document.getElementById('refresh')?.click();
     };
 
@@ -24,12 +25,16 @@ export const AddFromFile = () => {
                 onClose={() => {
                     con.setOpenAddImage(!con.openAddImage);
                     con.setName('');
+                    setSrc('');
                 }}
                 title="Adding from your computer? Super easy!"
                 secondaryActions={[
                     {
                         content: 'Cancel',
-                        onAction: () => con.setOpenAddImage(!con.openAddImage),
+                        onAction: () => {
+                            con.setOpenAddImage(!con.openAddImage);
+                            setSrc('');
+                        },
                     },
                 ]}
             >
@@ -40,7 +45,6 @@ export const AddFromFile = () => {
                         placeholder={'Example: Eric Marcantonio'}
                         label="Name"
                     />
-
                     <input
                         type="file"
                         id="image"

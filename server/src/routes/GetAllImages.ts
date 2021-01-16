@@ -9,7 +9,6 @@ export const GetAllImages = (req: Request, res: Response) => {
             res.sendStatus(400);
         } else {
             res.json(items).end();
-            
         }
     });
 };

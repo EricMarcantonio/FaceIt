@@ -14,7 +14,7 @@ export const Header = () => {
                     }}
                     className={'h-32 w-32'}
                 />
-                <DisplayText size="extraLarge">Good evening</DisplayText>
+                <DisplayText size="extraLarge">Welcome to FaceIt</DisplayText>
             </div>
             <div className="flex justify-end mr-8">
                 <Avatar customer name="Eric" />
