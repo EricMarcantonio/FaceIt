@@ -24,6 +24,7 @@ Need help identifing someone? No problem! Click **Seach by Other Photo** or **Se
 FaceIt is built mainly in `TypeScript`. It is dockerized and is ready for you try out yourself!
 
 Here is a diagram about how the program is structured:
+![image](https://drive.google.com/file/d/1L_ecK964vNStvbAJ25zFDdUVfRZcjA13/view?usp=sharing)
 
 It has a `React` front-end using `polaris` as its component system. On the back-end it is running `NodeJs` and `ExpressJs`. By using the `face-api.js` package, **FaceIt** is able to obtain the descriptors from each face, and save them into a `MongoDB` instance (along with the image of course!).  These descriptors are then computed for an unknown face, and then compared with the DB to try and find a match.
 
@@ -31,6 +32,6 @@ The entire program is structed around Docker, with 3 components in their seperat
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzY4NzY0NTcsMTI2MjU3NDM5MywtMT
-AxMzAzMjY1LDg5ODg1NjIxNV19
+eyJoaXN0b3J5IjpbMjEzOTMzMDM4MCwtMTUzNjg3NjQ1NywxMj
+YyNTc0MzkzLC0xMDEzMDMyNjUsODk4ODU2MjE1XX0=
 -->
