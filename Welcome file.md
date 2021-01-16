@@ -26,9 +26,11 @@ FaceIt is built in mainly `TypeScript`. It is dockerized and is ready for you tr
 
 Here is a diagram about how the program is structured:
 
-It has a `React` front-end using `polaris` as its component system. On the back-end it is running `NodeJs` and `ExpressJs`. By using the `face-api.js` package, **FaceIt** is able to obtain the descriptors from each face, and save them into a `MongoDB` instance (along with the image of course!)
+It has a `React` front-end using `polaris` as its component system. On the back-end it is running `NodeJs` and `ExpressJs`. By using the `face-api.js` package, **FaceIt** is able to obtain the descriptors from each face, and save them into a `MongoDB` instance (along with the image of course!).
+
+The entire program is structed around Docker, with 3 components in their seperate containers. The front-end is served from a Docker 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTQ0OTgyNTgsODk4ODU2MjE1XX0=
+eyJoaXN0b3J5IjpbMTI1MDcwNTAyNCw4OTg4NTYyMTVdfQ==
 -->
