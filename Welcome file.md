@@ -21,7 +21,7 @@ Adding selfies is a breeze! Just click **Add Photo by Webcam** or **Add Photo fr
 Need help identifing someone? No problem! Click **Seach by Other Photo** or **Seach by taking a Webcam photo** to ID who is in the picture!
 
 ### About (Nerd-stuff)
-FaceIt is built in mainly `TypeScript`. It is dockerized and is ready for you try out yourself!
+FaceIt is built mainly in `TypeScript`. It is dockerized and is ready for you try out yourself!
 
 Here is a diagram about how the program is structured:
 
@@ -31,6 +31,6 @@ The entire program is structed around Docker, with 3 components in their seperat
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2MjU3NDM5MywtMTAxMzAzMjY1LDg5OD
-g1NjIxNV19
+eyJoaXN0b3J5IjpbLTE1MzY4NzY0NTcsMTI2MjU3NDM5MywtMT
+AxMzAzMjY1LDg5ODg1NjIxNV19
 -->
