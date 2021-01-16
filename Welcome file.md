@@ -29,10 +29,7 @@ It has a `React` front-end using `polaris` as its component system. On the back-
 
 The entire program is structed around Docker, with 3 components in their seperate containers: front-end, back-end and the database.
 
-### Lessons Learned
-Throughout building this software, I have learned a ton about different technologies. I originally wanted to do the entire project in 
-
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjY5MDE4MjgsODk4ODU2MjE1XX0=
+eyJoaXN0b3J5IjpbLTEwMTMwMzI2NSw4OTg4NTYyMTVdfQ==
 -->
