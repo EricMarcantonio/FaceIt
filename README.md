@@ -21,5 +21,8 @@ Navigate to <code>localhost:5000</code> to see the app!</p>
 <p>FaceIt is built mainly in <code>TypeScript</code>. It is dockerized and is ready for you try out yourself!</p>
 <p>Here is a diagram about how the program is structured:</p>
 <p>It has a <code>React</code> front-end using <code>polaris</code> as its component system. On the back-end it is running <code>NodeJs</code> and <code>ExpressJs</code>. By using the <code>face-api.js</code> package, <strong>FaceIt</strong> is able to obtain the descriptors from each face, and save them into a <code>MongoDB</code> instance (along with the image of course!).  These descriptors are then computed for an unknown face, and then compared with the DB to try and find a match.</p>
-<p>The entire program is structed around Docker, with 3 components in their seperate containers: front-end, back-end and the database.</p>
+<p>The entire program is structed around Docker, with 3 components in their seperate containers: front-end, back-end and the database.</p>clone the repo
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTQ4MzYwMThdfQ==
+-->
